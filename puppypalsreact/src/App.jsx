@@ -1,15 +1,13 @@
 import './App.css'
+import Players from './Players'
+import Header from './Header'
 
 function App() {
 
   return (
     <>
-      <div className='bones'>
-                
-          <img src="./src/assets/bones2blue2.png" className="logo react" alt="Bones logo" />
-      
-      </div>
-      
+      <Header />
+      <Players />
     </>
   )
 }

@@ -7,7 +7,7 @@ export default function Header() {
       
         <div className='bones'>
                 
-            <img src="./src/assets/bones2blue2.png" className="logo react" alt="Bones logo" />
+            <img src="https://s3.us-west-1.amazonaws.com/rdelarosa.com/puppy/bones2blue2.png" className="logo react" alt="Bones logo" />
             
             <h1 className="puppypals"></h1>
             </div>

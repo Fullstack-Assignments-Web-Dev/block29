@@ -20,7 +20,7 @@ export default function PlayerList({ setSelectedPlayerId }) {
       fetchPlayers();
     }, []);
 
-console.log("Players: ", players)
+// console.log("Players: ", players)
 
         return ( 
 

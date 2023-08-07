@@ -6,7 +6,7 @@
 }
 
 body {
-  background-image: url(./src/assets/puppybw01dark.png);
+  background-image: url(https://s3.us-west-1.amazonaws.com/rdelarosa.com/puppy/puppybw01dark.png);
   background-position: center;
   background-repeat: repeat;
   background-attachment: fixed;
@@ -25,14 +25,19 @@ body {
 
 .create {
   width: 250px;
-  height: 250px;
+  height: 175px;
   position: fixed;
   z-index: 1;
   top: 150px;
   left: 10px;
+  padding-top: 20px;
   background: black;
   overflow-x: hidden;
-  padding: 8px 0;
+  /* padding: 8px; */
+}
+
+form {
+  padding: 0px 25px 0px 25px;
 }
 
 .players {
@@ -88,14 +93,15 @@ margin: 10px;
   margin-right:auto;
   padding: 15px;
   width: 700px;
-  height: 500px;
+  height: 450px;
   display: block;
   border: 2px solid white;
 }
 
 #detail-image {
   margin-left: 25px;
-  height: 450px;
+  max-height: 400px;
+  /* max-width: 400px; */
   float: left;
   border-radius: 20px;
  }
@@ -122,14 +128,15 @@ td {
   padding-left: 10px;
   padding-right: 10px;
   width: 200px;
+  border: 1px solid white;
 }
 
 tr:nth-of-type(1n+0) {
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 tr:nth-of-type(2n+0) {
-  background-color: rgba(15, 16, 18, 0.75);
+  background-color: rgba(15, 16, 18, 0.9);
 }
 
 .bones img {

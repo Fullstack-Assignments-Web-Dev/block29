@@ -21,32 +21,35 @@ const SelectedPlayer = ({ selectedPlayerId, setSelectedPlayerId }) => {
     console.log("Player: ", player)
     
     return (
-    <div className='details'>
+    <div id="single">
       {player ? (
         <>
-    <div>
-        <h2>Player Details</h2>
-        </div>    
+ 
+        <br/>   
+        <div className="deetImg">
+          <img id="detail-image" src={player.imageUrl}/>
+          </div>
+
         <div className="deets">
-          
+        <h2>Player Details</h2>
           <p>Name: {player.name}</p>
           <p>Breed: {player.breed}</p>
           <p>Status: {player.status}</p>
           <p>ID: {player.id}</p>
           </div>
 
-          <div className="deetImg">
-          <img src={player.imageUrl}/>
-          </div>
+      
           <br/><br/>
         </>
       ) : (
         <p>Loading contact...</p>
       )}
-<div>
+<div className="button">
       <button onClick={() => setSelectedPlayerId(null)}>Return</button>
       </div>
     </div>
+
+    
   );
 };
 

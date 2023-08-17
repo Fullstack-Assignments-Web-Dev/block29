@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef } from "react";
 
 export default function Create() {
   const baseURL = "https://fsa-puppy-bowl.herokuapp.com/api/2302-ACC-ET-WEB-PT-D/players/";
@@ -25,7 +25,7 @@ export default function Create() {
         method: "post",
         headers: {
           "Content-Type": "application/json",
-          "x-access-token": "token-value",
+        //   "x-access-token": "token-value",
         },
         body: JSON.stringify(postData),
         

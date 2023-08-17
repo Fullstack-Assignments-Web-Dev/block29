@@ -22,6 +22,8 @@ export default function PlayerList({ setSelectedPlayerId }) {
 
 // console.log("Players: ", players)
 
+
+
         return ( 
 
           
@@ -37,6 +39,7 @@ export default function PlayerList({ setSelectedPlayerId }) {
                   <td>Name</td>
                   <td>Breed</td>
                   <td>Status</td>
+                  
                 </tr>
                 {players.map((player) => {
           return <PlayerRow key={player.id} player={player} setSelectedPlayerId={setSelectedPlayerId} />;

@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
 import PlayerRow from './PlayerRow.jsx';
 
+
 export default function PlayerList({ setSelectedPlayerId }) {
-
-
   const [players, setPlayers] = useState([])
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredPlayers, setFilteredPlayers] = useState([]);
 
   useEffect(()=>{
     async function fetchPlayers() {
@@ -20,11 +21,18 @@ export default function PlayerList({ setSelectedPlayerId }) {
       fetchPlayers();
     }, []);
 
+    useEffect(() => {
+      const filtered = players.filter((player) =>
+        player.name.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setFilteredPlayers(filtered);
+    }, [searchQuery, players]);
+
 // console.log("Players: ", players)
 
         return ( 
 
-          
+          <div>
             <table>
               <thead>
                 <tr>
@@ -33,17 +41,26 @@ export default function PlayerList({ setSelectedPlayerId }) {
               </thead>
               <tbody>
                 <tr>
-                <td></td>
+                <td>
+
+                <input
+        type="text"
+        placeholder="Search players..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
+
+                </td>
                   <td>Name</td>
                   <td>Breed</td>
                   <td>Status</td>
                 </tr>
-                {players.map((player) => {
+                {filteredPlayers.map((player) => {
           return <PlayerRow key={player.id} player={player} setSelectedPlayerId={setSelectedPlayerId} />;
         })}
               </tbody>
             </table>
-            
+            </div> 
         ); 
     }
 

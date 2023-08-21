@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { deletePlayer } from './Helper.jsx';
 
 const SelectedPlayer = ({ selectedPlayerId, setSelectedPlayerId }) => {
   const [player, setPlayer] = useState(null);
@@ -18,8 +19,18 @@ const SelectedPlayer = ({ selectedPlayerId, setSelectedPlayerId }) => {
 
     fetchPlayer();}, [selectedPlayerId]);
 
-    console.log("Player: ", player)
+    // console.log("Player: ", player)
+
+  const deleteSelectedPlayer = async () => {
+    try {
+      await deletePlayer(selectedPlayerId);
+      location.reload()  
+    } catch (error) {
+      console.log('Error deleting Player:', error);
+    }
     
+  }
+
     return (
     <div id="single">
       {player ? (
@@ -36,6 +47,7 @@ const SelectedPlayer = ({ selectedPlayerId, setSelectedPlayerId }) => {
           <p>Breed: {player.breed}</p>
           <p>Status: {player.status}</p>
           <p>ID: {player.id}</p>
+          <button onClick={deleteSelectedPlayer}>Delete Player</button>
           </div>
 
       

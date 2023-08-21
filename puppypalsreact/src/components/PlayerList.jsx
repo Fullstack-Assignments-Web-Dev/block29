@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import PlayerRow from './PlayerRow.jsx';
 
+
 export default function PlayerList({ setSelectedPlayerId }) {
-
-
   const [players, setPlayers] = useState([])
+
 
   useEffect(()=>{
     async function fetchPlayers() {
